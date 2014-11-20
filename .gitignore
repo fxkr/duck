@@ -1,0 +1,15 @@
+*.bak
+*.swp
+*.tmp
+*~
+
+/.idea
+/*.iml
+
+/src
+/out
+/pkg
+*.out
+
+duck
+

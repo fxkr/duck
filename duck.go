@@ -61,18 +61,15 @@ func Run(settings Settings) {
 				log.Println("connection is stable", settings.Host)
 				nextDelay = baseDelay
 				err = <-errChan
-			case <-errChan:
-				err = <-errChan
+			case err := <-errChan:
 			}
-		case <-errChan:
-			err = <-errChan
+		case err := <-errChan:
 		}
 
+		// RunOnce has exited
 		if err != nil {
 			log.Println("error:", err)
 		}
-
-		// Wait until it's finished
 		close(errChan)
 		close(successChan)
 

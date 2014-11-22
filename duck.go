@@ -114,7 +114,7 @@ func RunOnce(settings Settings, success chan bool) (err error) {
 		return
 	}
 	if message.Command != irc.RPL_WELCOME {
-		err = errors.New("expected welcome, got" + strconv.Quote(message.Command))
+		err = errors.New("expected welcome, got " + strconv.Quote(message.Command))
 		return
 	}
 
